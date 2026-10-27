@@ -66,7 +66,7 @@ export const PARENT_GUIDE_CONTENT = {
     ]
   },
   psychologyAndWellbeing: {
-    heading: "The Psychology of 11+: Protecting Your Child and Handling Failure",
+    heading: "The Psychology of 11+: Protecting Your Child and Building Resilience",
     summary: "As a parent, your emotional reaction directly shapes your child's self-worth. Here is psychological guidance for navigating pressure and non-qualification.",
     mindsetShifts: [
       {

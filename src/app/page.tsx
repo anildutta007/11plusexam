@@ -46,7 +46,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all"
             >
               <Heart className="w-4 h-4 text-rose-400" />
-              Mental Health & Failure Guide
+              Child Well-being Guide
             </a>
           </div>
 

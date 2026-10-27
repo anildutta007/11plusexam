@@ -1,12 +1,15 @@
-'use strict';
+'use client';
+
 import React, { useState } from 'react';
 import { GRAMMAR_SCHOOLS, GrammarSchool } from '@/data/grammarSchools';
-import { Search, Filter, Award, TrendingUp, Building } from 'lucide-react';
+import { Search, Filter, Award, TrendingUp, Building, MapPin } from 'lucide-react';
+import SchoolMapModal from './SchoolMapModal';
 
 export default function SchoolsTable() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedGender, setSelectedGender] = useState('All');
+  const [activeMapSchool, setActiveMapSchool] = useState<GrammarSchool | null>(null);
 
   const regions = ['All', 'London', 'Buckinghamshire', 'Essex', 'Kent', 'West Midlands', 'Warwickshire', 'Greater Manchester', 'Gloucestershire'];
 
@@ -33,7 +36,7 @@ export default function SchoolsTable() {
               Grammar School Performance, Scores & Cut-Offs
             </h2>
             <p className="mt-1 text-sm text-slate-600 max-w-2xl">
-              Inspect test formats, admitted cut-off scores, applicants, Progress 8 ratings, and local housing benchmarks for top UK state grammar schools.
+              Inspect test formats, admitted cut-off scores, applicants, Progress 8 ratings, and local housing benchmarks for top UK state grammar schools. Click on any school or location to inspect its catchment radius on an interactive map.
             </p>
           </div>
 
@@ -80,11 +83,11 @@ export default function SchoolsTable() {
           <table className="w-full text-left border-collapse text-xs">
             <thead>
               <tr className="bg-slate-100/80 text-slate-700 font-semibold border-b border-slate-200">
-                <th className="py-3 px-4">School & Location</th>
+                <th className="py-3 px-4">School & Location (Click to view map)</th>
                 <th className="py-3 px-3">Exam Board</th>
                 <th className="py-3 px-3">Places / Applicants</th>
                 <th className="py-3 px-3">Admitted Cut-off Score</th>
-                <th className="py-3 px-3">Catchment Model</th>
+                <th className="py-3 px-3">Catchment Model & Map</th>
                 <th className="py-3 px-3">Ofsted & Progress 8</th>
                 <th className="py-3 px-3">Avg 3-Bed House</th>
                 <th className="py-3 px-3 text-right">Links</th>
@@ -96,10 +99,23 @@ export default function SchoolsTable() {
                 return (
                   <tr key={school.id} className="hover:bg-slate-50 transition-colors">
                     <td className="py-3.5 px-4 font-medium text-slate-900">
-                      <div className="font-bold text-sm text-indigo-900">{school.name}</div>
-                      <div className="text-[11px] text-slate-500">
-                        {school.borough}, {school.region} ({school.postcode}) &middot; <span className="font-semibold">{school.gender}</span>
-                      </div>
+                      <button
+                        onClick={() => setActiveMapSchool(school)}
+                        className="text-left group flex items-start gap-1.5 focus:outline-none"
+                      >
+                        <div>
+                          <div className="font-bold text-sm text-indigo-900 group-hover:text-indigo-600 transition-colors flex items-center gap-1">
+                            {school.name}
+                            <MapPin className="w-3.5 h-3.5 text-indigo-500 opacity-70 group-hover:opacity-100" />
+                          </div>
+                          <div className="text-[11px] text-slate-500 group-hover:text-slate-700">
+                            {school.borough}, {school.region} ({school.postcode}) &middot; <span className="font-semibold">{school.gender}</span>
+                          </div>
+                          <span className="text-[10px] text-indigo-600 font-semibold underline mt-0.5 inline-block">
+                            View location & catchment radius on map →
+                          </span>
+                        </div>
+                      </button>
                     </td>
                     <td className="py-3 px-3">
                       <span className="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-800 font-medium text-[11px]">
@@ -109,6 +125,9 @@ export default function SchoolsTable() {
                     <td className="py-3 px-3">
                       <div><strong className="text-slate-900">{school.totalSeats}</strong> seats</div>
                       <div className="text-slate-500 text-[11px]">{school.applicantsLastYear.toLocaleString()} apps ({ratio}:1)</div>
+                      <div className="text-[10px] text-emerald-700 font-semibold mt-0.5">
+                        In: {school.seatsInsideCatchment} | Out: {school.seatsOutsideCatchment}
+                      </div>
                     </td>
                     <td className="py-3 px-3 max-w-xs">
                       <div className="font-semibold text-slate-900">{school.admittedCutoffScore}</div>
@@ -116,9 +135,16 @@ export default function SchoolsTable() {
                     </td>
                     <td className="py-3 px-3">
                       <span className="font-semibold block">{school.catchmentType}</span>
-                      <span className="text-[11px] text-slate-500">
+                      <span className="text-[11px] text-slate-500 block mb-1">
                         {school.catchmentRadiusMiles ? `~${school.catchmentRadiusMiles} miles radius` : 'No radius limit'}
                       </span>
+                      <button
+                        onClick={() => setActiveMapSchool(school)}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-[11px] font-semibold border border-indigo-200 transition-colors"
+                      >
+                        <MapPin className="w-3 h-3" />
+                        Show Radius Map
+                      </button>
                     </td>
                     <td className="py-3 px-3">
                       <div className="flex items-center gap-1 font-semibold text-emerald-700">
@@ -149,6 +175,12 @@ export default function SchoolsTable() {
             </tbody>
           </table>
         </div>
+
+        {/* Interactive Map Modal with Catchment Radius and Seats */}
+        <SchoolMapModal
+          school={activeMapSchool}
+          onClose={() => setActiveMapSchool(null)}
+        />
       </div>
     </section>
   );

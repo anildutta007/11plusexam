@@ -28,7 +28,7 @@ export default function Navbar() {
               Key Dates
             </a>
             <a href="#psychology-section" className="hover:text-indigo-600 transition-colors">
-              Child Well-being & Failure
+              Child Well-being
             </a>
             <a href="#papers-section" className="hover:text-indigo-600 transition-colors">
               Sample Papers

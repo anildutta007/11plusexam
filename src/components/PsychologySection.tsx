@@ -21,7 +21,7 @@ export default function PsychologySection() {
             Mental Health & Parental Guidance
           </div>
           <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
-            The Psychology of 11+: Protecting Your Child and Handling Failure
+            The Psychology of 11+: Protecting Your Child and Building Resilience
           </h2>
           <p className="mt-3 text-base text-slate-600">
             Grammar school preparation can place extraordinary pressure on young children and parents alike. Here is compassionate, evidence-based guidance on how to navigate this journey with warmth and perspective.
