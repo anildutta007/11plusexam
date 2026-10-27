@@ -1,7 +1,10 @@
 'use client';
 
 import Navbar from '@/components/Navbar';
+import WhatIs11PlusSection from '@/components/WhatIs11PlusSection';
+import UKGrammarMap from '@/components/UKGrammarMap';
 import PostcodeFinder from '@/components/PostcodeFinder';
+import PreparationMasterySection from '@/components/PreparationMasterySection';
 import SchoolsTable from '@/components/SchoolsTable';
 import TimelineSection from '@/components/TimelineSection';
 import PsychologySection from '@/components/PsychologySection';
@@ -74,7 +77,10 @@ export default function Home() {
 
       {/* Main App Components */}
       <main className="flex-1">
+        <WhatIs11PlusSection />
+        <UKGrammarMap />
         <PostcodeFinder />
+        <PreparationMasterySection />
         <SchoolsTable />
         <TimelineSection />
         <PsychologySection />

@@ -18,8 +18,17 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+            <a href="#what-is-11plus" className="hover:text-indigo-600 transition-colors">
+              What is 11+?
+            </a>
+            <a href="#uk-map-section" className="hover:text-indigo-600 transition-colors">
+              UK Map of Grammars
+            </a>
             <a href="#postcode-finder" className="hover:text-indigo-600 transition-colors">
-              Find Schools & Catchment
+              Postcode Finder
+            </a>
+            <a href="#preparation-mastery" className="hover:text-indigo-600 transition-colors">
+              How to Prepare
             </a>
             <a href="#schools-table" className="hover:text-indigo-600 transition-colors">
               School Directory
