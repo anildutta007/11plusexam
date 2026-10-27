@@ -69,7 +69,7 @@ export const GRAMMAR_SCHOOLS: GrammarSchool[] = [
     avgHousePrice: { twoBed: '£395,000', threeBed: '£540,000', fourBed: '£720,000' },
     avgMonthlyRent: { twoBed: '£1,650/mo', threeBed: '£2,100/mo' },
     housingNotes: 'Sutton and Wallington have high demand from families targeting Sutton grammar consortium.',
-    samplePaperUrl: 'https://www.wilsons.school/admissions/sample-papers/',
+    samplePaperUrl: 'https://www.wilsons.school/admissions/y7/faqs/',
     registrationMonth: 'May – August',
     examMonth: 'September (Stage 1), October (Stage 2)',
     officialWebsite: 'https://www.wilsons.school',
@@ -233,7 +233,7 @@ export const GRAMMAR_SCHOOLS: GrammarSchool[] = [
     avgHousePrice: { twoBed: '£480,000', threeBed: '£690,000', fourBed: '£950,000' },
     avgMonthlyRent: { twoBed: '£1,850/mo', threeBed: '£2,450/mo' },
     housingNotes: 'High Barnet & Hadley Wood are premium areas; many parents commute or relocate to North London.',
-    samplePaperUrl: 'https://www.qebarnet.co.uk/admissions-information/sample-test-papers/',
+    samplePaperUrl: 'https://www.qebarnet.co.uk/admissions/sample-test-papers/',
     registrationMonth: 'May – July',
     examMonth: 'Late September',
     officialWebsite: 'https://www.qebarnet.co.uk',
@@ -597,7 +597,7 @@ export const GRAMMAR_SCHOOLS: GrammarSchool[] = [
     avgHousePrice: { twoBed: '£420,000', threeBed: '£610,000', fourBed: '£890,000' },
     avgMonthlyRent: { twoBed: '£1,600/mo', threeBed: '£2,250/mo' },
     housingNotes: 'Amersham sits at end of Metropolitan line. Very high demand from London relocators.',
-    samplePaperUrl: 'https://www.thebucksgrammarschools.org/practice-materials',
+    samplePaperUrl: 'https://www.thebucksgrammarschools.org/the-secondary-transfer-test',
     registrationMonth: 'May – June',
     examMonth: 'September',
     officialWebsite: 'https://www.challoners.com',
@@ -825,7 +825,7 @@ export const GRAMMAR_SCHOOLS: GrammarSchool[] = [
     avgHousePrice: { twoBed: '£295,000', threeBed: '£420,000', fourBed: '£620,000' },
     avgMonthlyRent: { twoBed: '£1,350/mo', threeBed: '£1,750/mo' },
     housingNotes: 'Chelmsford is a 32-min commute to London Liverpool St; popular choice for commuter parents.',
-    samplePaperUrl: 'https://csse.org.uk/sample-papers/',
+    samplePaperUrl: 'https://csse.org.uk/practice-material/',
     registrationMonth: 'May – July',
     examMonth: 'Late September',
     officialWebsite: 'https://www.kegs.org.uk',
@@ -1021,7 +1021,7 @@ export const GRAMMAR_SCHOOLS: GrammarSchool[] = [
     avgHousePrice: { twoBed: '£330,000', threeBed: '£490,000', fourBed: '£730,000' },
     avgMonthlyRent: { twoBed: '£1,450/mo', threeBed: '£2,000/mo' },
     housingNotes: 'Tonbridge & Sevenoaks corridor is heavily populated with selective school aspirants; rail links to London Charing Cross.',
-    samplePaperUrl: 'https://www.kent.gov.uk/education-and-children/schools/school-places/kent-test#tab-4',
+    samplePaperUrl: 'https://www.kent.gov.uk/education-and-children/schools/school-admissions/kent-test/prepare-for-the-kent-test',
     registrationMonth: 'June – July',
     examMonth: 'September',
     officialWebsite: 'https://www.judd.online',
@@ -1874,35 +1874,35 @@ export const SAMPLE_PAPERS: SamplePaperResource[] = [
     board: 'GL Assessment',
     subject: 'Mathematics',
     difficulty: 'Standard',
-    description: 'Official GL multiple choice paper covers fractions, word problems, algebra, and geometry.',
-    downloadUrl: 'https://www.gl-assessment.co.uk/free-fam-papers',
-    source: 'GL Assessment Official'
+    description: 'Official GL Assessment free familiarisation booklet & answer sheet covering fractions, arithmetic, word problems, algebra, and geometry.',
+    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-familiarisation-materials',
+    source: 'GL Assessment Official Portal'
   },
   {
     title: 'GL Assessment Verbal Reasoning (80 Questions)',
     board: 'GL Assessment',
     subject: 'Verbal Reasoning',
     difficulty: 'Standard',
-    description: 'Standard 50-minute VR paper: word analogies, code breaking, antonym/synonym pairs.',
-    downloadUrl: 'https://www.gl-assessment.co.uk/free-fam-papers',
-    source: 'GL Assessment Official'
+    description: 'Official GL Assessment 50-minute VR practice booklet: word analogies, code breaking, letter patterns, antonym/synonym pairs.',
+    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-familiarisation-materials',
+    source: 'GL Assessment Official Portal'
   },
   {
     title: 'GL Assessment Non-Verbal & Spatial Reasoning',
     board: 'GL Assessment',
     subject: 'Non-Verbal Reasoning',
     difficulty: 'Standard',
-    description: 'Covers 3D cube rotations, folded shapes, hidden patterns, and matrix sequences.',
-    downloadUrl: 'https://www.gl-assessment.co.uk/free-fam-papers',
-    source: 'GL Assessment Official'
+    description: 'Official GL Assessment familiarisation paper: 3D cube rotations, net folding, matrix completion, and pattern sequences.',
+    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-familiarisation-materials',
+    source: 'GL Assessment Official Portal'
   },
   {
-    title: 'CSSE Essex Official Past Paper (Maths)',
+    title: 'CSSE Essex Official Past Paper & Answers (Maths)',
     board: 'CSSE',
     subject: 'Mathematics',
     difficulty: 'Challenging',
-    description: 'Demanding multi-step word problems without multiple choice options. Tests deep conceptual understanding.',
-    downloadUrl: 'https://csse.org.uk/sample-papers/',
+    description: 'Official CSSE Essex past examination paper with multi-step word problems and non-calculator mathematics.',
+    downloadUrl: 'https://csse.org.uk/practice-material/',
     source: 'Consortium of Selective Schools in Essex'
   },
   {
@@ -1910,26 +1910,53 @@ export const SAMPLE_PAPERS: SamplePaperResource[] = [
     board: 'CSSE',
     subject: 'English',
     difficulty: 'Challenging',
-    description: 'Classic 19th-century literature extract comprehension with applied grammar & creative writing stimulus.',
-    downloadUrl: 'https://csse.org.uk/sample-papers/',
-    source: 'CSSE Essex'
+    description: 'Official CSSE Essex English paper: comprehension of 19th-century text, vocabulary analysis, and creative writing task.',
+    downloadUrl: 'https://csse.org.uk/practice-material/',
+    source: 'Consortium of Selective Schools in Essex'
   },
   {
-    title: 'Sutton SET Stage 1 Multiple Choice Paper',
-    board: 'SET (Sutton Stage 1/2)',
+    title: 'Queen Elizabeth’s Barnet Official Sample Papers',
+    board: 'GL Assessment',
     subject: 'Maths & English',
     difficulty: 'Challenging',
-    description: 'Selective Eligibility Test fast-paced 45-min papers testing rapid accuracy and inference.',
-    downloadUrl: 'https://www.wilsons.school/admissions/sample-papers/',
-    source: 'Sutton Grammar Consortium'
+    description: 'Official QE Boys specimen entrance papers and answering guides for North London candidates.',
+    downloadUrl: 'https://www.qebarnet.co.uk/admissions/sample-test-papers/',
+    source: "Queen Elizabeth's School, Barnet"
   },
   {
-    title: 'Kent Test Practice Questions (KCC Approved)',
+    title: 'Kent Test Official Familiarisation Booklet (KCC)',
     board: 'GL Assessment',
     subject: 'All Subjects Combined',
     difficulty: 'Standard',
-    description: 'Kent County Council sample questions demonstrating the standardised marking format.',
-    downloadUrl: 'https://www.kent.gov.uk/education-and-children/schools/school-places/kent-test#tab-4',
-    source: 'Kent County Council'
+    description: 'Official Kent County Council preparation booklet explaining Kent test format, sample questions, and OMR answer grids.',
+    downloadUrl: 'https://www.kent.gov.uk/education-and-children/schools/school-admissions/kent-test/prepare-for-the-kent-test',
+    source: 'Kent County Council Official'
+  },
+  {
+    title: 'Buckinghamshire Secondary Transfer Test Practice Guide',
+    board: 'GL Assessment',
+    subject: 'VR, Maths & NVR',
+    difficulty: 'Standard',
+    description: 'Official TBGS (The Buckinghamshire Grammar Schools) preparation notes and format familiarisation.',
+    downloadUrl: 'https://www.thebucksgrammarschools.org/the-secondary-transfer-test',
+    source: 'The Buckinghamshire Grammar Schools'
+  },
+  {
+    title: 'Sutton Selective Eligibility Test (SET) Guidance',
+    board: 'SET (Sutton Stage 1/2)',
+    subject: 'Maths & English',
+    difficulty: 'Standard',
+    description: 'Official guidance on Sutton Stage 1 SET testing format and curriculum expectations directly from Wilson\'s School admissions.',
+    downloadUrl: 'https://www.wilsons.school/admissions/y7/faqs/',
+    source: 'Sutton Grammar Consortium'
+  },
+  {
+    title: 'West Midlands Grammar Schools Entrance Test Guide',
+    board: 'GL Assessment',
+    subject: 'All Subjects Combined',
+    difficulty: 'Standard',
+    description: 'Official familiarisation guide from the West Midlands Grammar Schools Consortium covering Birmingham & Warwickshire.',
+    downloadUrl: 'https://westmidlandsgrammarschools.co.uk/',
+    source: 'West Midlands Grammar Schools'
   }
 ];
