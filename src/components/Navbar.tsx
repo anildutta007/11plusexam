@@ -9,7 +9,6 @@ import {
   BookOpen, 
   Building2, 
   Calendar, 
-  Heart, 
   FileText 
 } from 'lucide-react';
 
@@ -20,24 +19,21 @@ export type TabId =
   | 'how-to-prepare'
   | 'school-directory'
   | 'key-dates'
-  | 'child-wellbeing'
   | 'sample-papers';
 
 export interface TabItem {
   id: TabId;
   label: string;
   icon: React.ElementType;
-  badge?: string;
 }
 
 export const TABS: TabItem[] = [
   { id: 'what-is-11plus', label: 'What is 11+?', icon: HelpCircle },
   { id: 'uk-map', label: 'UK Map of Grammars', icon: Map },
-  { id: 'postcode-finder', label: 'Postcode Finder', icon: MapPin },
+  { id: 'postcode-finder', label: 'Postcode & Catchment Finder', icon: MapPin },
   { id: 'how-to-prepare', label: 'How to Prepare', icon: BookOpen },
   { id: 'school-directory', label: 'School Directory', icon: Building2 },
   { id: 'key-dates', label: 'Key Dates', icon: Calendar },
-  { id: 'child-wellbeing', label: 'Child Well-being', icon: Heart },
   { id: 'sample-papers', label: 'Sample Papers', icon: FileText },
 ];
 
@@ -68,7 +64,7 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
           </button>
 
           {/* Top Tabs Bar */}
-          <nav className="hidden lg:flex items-center gap-1 text-xs font-semibold">
+          <nav className="hidden lg:flex items-center gap-1.5 text-xs font-semibold">
             {TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -76,7 +72,7 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
                 <button
                   key={tab.id}
                   onClick={() => onSelectTab(tab.id)}
-                  className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl transition-all ${
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all ${
                     isActive
                       ? 'bg-indigo-600 text-white shadow-sm font-bold'
                       : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-100'
@@ -88,16 +84,6 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
               );
             })}
           </nav>
-
-          {/* Quick CTA */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => onSelectTab('postcode-finder')}
-              className="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition-all"
-            >
-              Check My Postcode
-            </button>
-          </div>
         </div>
 
         {/* Mobile Scrolling Horizontal Tab Strip */}

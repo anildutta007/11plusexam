@@ -8,9 +8,8 @@ import PostcodeFinder from '@/components/PostcodeFinder';
 import PreparationMasterySection from '@/components/PreparationMasterySection';
 import SchoolsTable from '@/components/SchoolsTable';
 import TimelineSection from '@/components/TimelineSection';
-import PsychologySection from '@/components/PsychologySection';
 import SamplePapersSection from '@/components/SamplePapersSection';
-import { Sparkles, MapPin, Heart, Compass, CheckCircle2 } from 'lucide-react';
+import { Sparkles, MapPin, Compass, BookOpen } from 'lucide-react';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>('what-is-11plus');
@@ -36,24 +35,24 @@ export default function Home() {
           </h1>
 
           <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            From postcode catchment radii and historical admission cut-off scores, to managing intense test anxiety and handling results day with empathy.
+            From postcode catchment radii and historical admission cut-off scores, to preparation roadmaps and critical key dates.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-semibold">
             <button
               onClick={() => setActiveTab('postcode-finder')}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 transition-all transform hover:-translate-y-0.5"
             >
               <MapPin className="w-4 h-4" />
-              Check Postcode Catchment
+              Postcode & Catchment Finder
             </button>
 
             <button
-              onClick={() => setActiveTab('child-wellbeing')}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all"
+              onClick={() => setActiveTab('how-to-prepare')}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all"
             >
-              <Heart className="w-4 h-4 text-rose-400" />
-              Child Well-being Guide
+              <BookOpen className="w-4 h-4 text-indigo-300" />
+              How to Prepare Guide
             </button>
           </div>
 
@@ -72,8 +71,8 @@ export default function Home() {
               <span className="text-xs text-slate-400">Historical Admission Scores</span>
             </div>
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-              <span className="block text-2xl font-bold text-rose-300">Empathetic</span>
-              <span className="text-xs text-slate-400">Child-First Wellbeing Support</span>
+              <span className="block text-2xl font-bold text-emerald-300">10 Regions</span>
+              <span className="text-xs text-slate-400">National Grammar Enclaves</span>
             </div>
           </div>
         </div>
@@ -117,7 +116,6 @@ export default function Home() {
         {activeTab === 'how-to-prepare' && <PreparationMasterySection />}
         {activeTab === 'school-directory' && <SchoolsTable />}
         {activeTab === 'key-dates' && <TimelineSection />}
-        {activeTab === 'child-wellbeing' && <PsychologySection />}
         {activeTab === 'sample-papers' && <SamplePapersSection />}
       </main>
 
