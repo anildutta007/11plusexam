@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import VisitorCounter from './VisitorCounter';
 import { 
   HelpCircle, 
   Map, 
@@ -84,6 +85,11 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
               );
             })}
           </nav>
+
+          {/* Live Visitor Counter */}
+          <div className="flex items-center">
+            <VisitorCounter />
+          </div>
         </div>
 
         {/* Mobile Scrolling Horizontal Tab Strip */}
