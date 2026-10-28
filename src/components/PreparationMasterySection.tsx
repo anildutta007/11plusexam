@@ -20,18 +20,18 @@ export default function PreparationMasterySection() {
   const [activeTab, setActiveTab] = useState<'roadmap' | 'subjects' | 'routine' | 'books'>('roadmap');
 
   return (
-    <section id="preparation-mastery" className="py-14 bg-slate-50 border-y border-slate-200">
+    <section id="preparation-mastery" className="py-14 bg-[#F8F3E8] border-y border-[#EFE8DA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E2ECE5] border border-[#1F5A45]/20 text-[#1F5A45] text-xs font-bold mb-3">
             <BookCheck className="w-3.5 h-3.5" />
             Comprehensive 11+ Preparation Masterclass
           </div>
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-[#1F5A45] tracking-tight sm:text-4xl font-serif">
             How to Prepare Your Child: Step-by-Step Strategic Blueprint
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
+          <p className="mt-3 text-sm sm:text-base text-slate-700">
             A sustainable, low-anxiety preparation system designed by UK educational specialists. Learn what to study, when to study, which books to buy, and how to build speed without burnout.
           </p>
 
@@ -41,8 +41,8 @@ export default function PreparationMasterySection() {
               onClick={() => setActiveTab('roadmap')}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
                 activeTab === 'roadmap'
-                  ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
+                  ? 'bg-[#1F5A45] text-white shadow-xs'
+                  : 'bg-white text-slate-800 border border-[#EFE8DA] hover:bg-[#E2ECE5]'
               }`}
             >
               <Calendar className="w-4 h-4" />
@@ -53,8 +53,8 @@ export default function PreparationMasterySection() {
               onClick={() => setActiveTab('subjects')}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
                 activeTab === 'subjects'
-                  ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
+                  ? 'bg-[#1F5A45] text-white shadow-xs'
+                  : 'bg-white text-slate-800 border border-[#EFE8DA] hover:bg-[#E2ECE5]'
               }`}
             >
               <Brain className="w-4 h-4" />
@@ -65,8 +65,8 @@ export default function PreparationMasterySection() {
               onClick={() => setActiveTab('routine')}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
                 activeTab === 'routine'
-                  ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
+                  ? 'bg-[#1F5A45] text-white shadow-xs'
+                  : 'bg-white text-slate-800 border border-[#EFE8DA] hover:bg-[#E2ECE5]'
               }`}
             >
               <Timer className="w-4 h-4" />
@@ -77,8 +77,8 @@ export default function PreparationMasterySection() {
               onClick={() => setActiveTab('books')}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
                 activeTab === 'books'
-                  ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
+                  ? 'bg-[#1F5A45] text-white shadow-xs'
+                  : 'bg-white text-slate-800 border border-[#EFE8DA] hover:bg-[#E2ECE5]'
               }`}
             >
               <BookmarkCheck className="w-4 h-4" />

@@ -9,94 +9,97 @@ import PreparationMasterySection from '@/components/PreparationMasterySection';
 import SchoolsTable from '@/components/SchoolsTable';
 import TimelineSection from '@/components/TimelineSection';
 import SamplePapersSection from '@/components/SamplePapersSection';
-import { Sparkles, MapPin, Compass, BookOpen } from 'lucide-react';
+import { Sparkles, MapPin, Compass, BookOpen, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>('what-is-11plus');
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F8F3E8] text-[#1F2D28] flex flex-col font-sans selection:bg-[#F3DD87] selection:text-[#1F5A45]">
       {/* Top Navbar with Tab Controller */}
       <Navbar activeTab={activeTab} onSelectTab={setActiveTab} />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-900 via-indigo-950 to-slate-900 text-white py-12 sm:py-16">
-        {/* Decorative background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl pointer-events-none" />
+      {/* Hero Section styled with Forest Green, Butter Yellow badges, and Coral CTAs */}
+      <section className="relative overflow-hidden bg-[#1F5A45] text-white py-14 sm:py-20 border-b-4 border-[#F3DD87]">
+        {/* Subtle warm ambient accents */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E9774F]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F3DD87]/10 rounded-full blur-2xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-indigo-200 text-xs sm:text-sm font-medium mb-5">
-            <Sparkles className="w-4 h-4 text-amber-300" />
-            <span>The Complete 2026/2027 UK Grammar School Roadmap</span>
+          {/* Butter Yellow Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3DD87] text-[#1F5A45] text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-xs">
+            <Sparkles className="w-4 h-4 text-[#E9774F]" />
+            <span>The Calm 2026/2027 UK Grammar School Companion</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
-            Clear Guidance for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-rose-300">Worried UK Parents</span> Navigating the 11-Plus
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight max-w-4xl mx-auto leading-tight text-[#F8F3E8]">
+            Clear Guidance for <span className="text-[#F3DD87] underline decoration-[#E9774F] decoration-wavy decoration-2">Worried UK Parents</span> Navigating the 11-Plus
           </h1>
 
-          <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            From postcode catchment radii and historical admission cut-off scores, to preparation roadmaps and critical key dates.
+          <p className="mt-5 text-base sm:text-lg text-[#E2ECE5] max-w-2xl mx-auto leading-relaxed font-sans">
+            A warm, paper-friendly space covering postcode catchment radii, cut-off admission scores, school housing benchmarks, and balanced preparation roadmaps.
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-semibold">
+          {/* Action Buttons: Coral for "Start here" / "Check Postcode", and Pale Sage outline */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 text-xs sm:text-sm font-bold font-sans">
             <button
               onClick={() => setActiveTab('postcode-finder')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#E9774F] hover:bg-[#D7653D] text-white shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 tracking-wide"
             >
-              <MapPin className="w-4 h-4" />
-              Postcode & Catchment Finder
+              <MapPin className="w-4 h-4 text-[#F3DD87]" />
+              Start Here: Postcode & Catchment
             </button>
 
             <button
               onClick={() => setActiveTab('how-to-prepare')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#E2ECE5] hover:bg-white text-[#1F5A45] font-bold shadow-xs transition-all"
             >
-              <BookOpen className="w-4 h-4 text-indigo-300" />
+              <BookOpen className="w-4 h-4 text-[#1F5A45]" />
               How to Prepare Guide
             </button>
           </div>
 
-          {/* Quick Stats Trust Badges */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-white/10 text-left">
-            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-              <span className="block text-2xl font-bold text-white">163</span>
-              <span className="text-xs text-slate-400">UK Grammar Schools</span>
+          {/* Facts Band with Soft Beige & Forest Green trust points */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto pt-8 border-t border-white/20 text-left">
+            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
+              <span className="block text-2xl font-serif font-bold text-[#F3DD87]">163</span>
+              <span className="text-xs text-[#E2ECE5]">UK Grammar Schools</span>
             </div>
-            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-              <span className="block text-2xl font-bold text-indigo-300">100% Free</span>
-              <span className="text-xs text-slate-400">State Tuition Funding</span>
+            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
+              <span className="block text-2xl font-serif font-bold text-[#F8F3E8]">100% Free</span>
+              <span className="text-xs text-[#E2ECE5]">State Tuition Funding</span>
             </div>
-            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-              <span className="block text-2xl font-bold text-amber-300">121+ / Top Rank</span>
-              <span className="text-xs text-slate-400">Historical Admission Scores</span>
+            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
+              <span className="block text-2xl font-serif font-bold text-[#E9774F]">121+ / Rank</span>
+              <span className="text-xs text-[#E2ECE5]">Historical Admission Scores</span>
             </div>
-            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-              <span className="block text-2xl font-bold text-emerald-300">10 Regions</span>
-              <span className="text-xs text-slate-400">National Grammar Enclaves</span>
+            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
+              <span className="block text-2xl font-serif font-bold text-[#F3DD87]">10 Regions</span>
+              <span className="text-xs text-[#E2ECE5]">National Selective Enclaves</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Active Tab Sub-header & Quick Selector */}
-      <div className="bg-white border-b border-slate-200 sticky top-16 z-40 shadow-xs">
+      {/* Active Tab Sub-header with Soft Beige base and Butter Yellow tag */}
+      <div className="bg-[#EFE8DA] border-b border-[#DDD0BC] sticky top-18 z-40 shadow-2xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#1F5A45]" />
+            <span className="text-xs font-semibold text-[#5C6E67] uppercase tracking-wider font-sans">
               Viewing Section:
             </span>
-            <span className="text-xs sm:text-sm font-bold text-indigo-900 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200">
+            <span className="text-xs sm:text-sm font-serif font-bold text-[#1F5A45] bg-[#F3DD87] px-3 py-1 rounded-lg border border-[#DEC465]">
               {TABS.find((t) => t.id === activeTab)?.label}
             </span>
           </div>
 
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-slate-500 hidden sm:inline">Jump to:</span>
+          <div className="flex items-center gap-2 text-xs font-sans">
+            <span className="text-[#5C6E67] hidden sm:inline">Jump to:</span>
             <select
               value={activeTab}
               onChange={(e) => setActiveTab(e.target.value as TabId)}
-              className="bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1 text-xs font-semibold text-slate-800"
+              className="bg-[#F8F3E8] border border-[#DDD0BC] rounded-lg px-2.5 py-1 text-xs font-bold text-[#1F5A45] focus:outline-none focus:ring-1 focus:ring-[#1F5A45]"
             >
               {TABS.map((t) => (
                 <option key={t.id} value={t.id}>
@@ -108,8 +111,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Main Tab Content - ONLY THE RELEVANT ACTIVE TAB IS SHOWN */}
-      <main className="flex-1 min-h-[600px]">
+      {/* Main Tab Content - Cream paper background base */}
+      <main className="flex-1 min-h-[600px] bg-[#F8F3E8]">
         {activeTab === 'what-is-11plus' && <WhatIs11PlusSection />}
         {activeTab === 'uk-map' && <UKGrammarMap />}
         {activeTab === 'postcode-finder' && <PostcodeFinder />}
@@ -119,8 +122,8 @@ export default function Home() {
         {activeTab === 'sample-papers' && <SamplePapersSection />}
       </main>
 
-      {/* Next/Prev Navigation Footer */}
-      <div className="bg-slate-100 border-t border-slate-200 py-6">
+      {/* Next/Prev Navigation Footer in Soft Beige */}
+      <div className="bg-[#EFE8DA] border-t border-[#DDD0BC] py-6 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {(() => {
             const currentIndex = TABS.findIndex((t) => t.id === activeTab);
@@ -132,7 +135,7 @@ export default function Home() {
                 {prevTab ? (
                   <button
                     onClick={() => setActiveTab(prevTab.id)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition-colors shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold text-[#1F5A45] bg-[#F8F3E8] border border-[#DDD0BC] hover:bg-white transition-colors shadow-2xs"
                   >
                     ← Previous: {prevTab.label}
                   </button>
@@ -143,14 +146,14 @@ export default function Home() {
                 {nextTab ? (
                   <button
                     onClick={() => setActiveTab(nextTab.id)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#E9774F] hover:bg-[#D7653D] transition-colors shadow-xs"
                   >
                     Next: {nextTab.label} →
                   </button>
                 ) : (
                   <button
                     onClick={() => setActiveTab('what-is-11plus')}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 hover:bg-indigo-100 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold text-[#1F5A45] bg-[#E2ECE5] border border-[#BFD4C8] hover:bg-[#D4E4DA] transition-colors"
                   >
                     ↺ Back to Start
                   </button>
@@ -161,19 +164,19 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 text-xs py-10 border-t border-slate-800">
+      {/* Footer in Deep Forest Green */}
+      <footer className="bg-[#164233] text-[#E2ECE5] text-xs py-10 border-t-2 border-[#1F5A45] font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-white font-bold text-sm">
-              <Compass className="w-5 h-5 text-indigo-400" />
+            <div className="flex items-center gap-2.5 text-[#F8F3E8] font-serif font-bold text-sm">
+              <Compass className="w-5 h-5 text-[#F3DD87]" />
               11+ Compass UK &middot; Independent Guidance for Parents
             </div>
-            <p className="text-center md:text-right text-[11px] text-slate-500 max-w-md">
+            <p className="text-center md:text-right text-[11px] text-[#A2B8AF] max-w-md leading-relaxed">
               Disclaimer: 11+ Compass is an independent informational guide. Admission policies, cut-offs, and catchment definitions change annually; always check official school and local authority websites.
             </p>
           </div>
-          <div className="mt-6 pt-6 border-t border-slate-800 text-center text-[11px] text-slate-600">
+          <div className="mt-6 pt-6 border-t border-white/10 text-center text-[11px] text-[#A2B8AF]">
             &copy; 2026 11+ Compass. Built with care for UK families and children.
           </div>
         </div>

@@ -17,30 +17,30 @@ export default function TimelineSection() {
   });
 
   return (
-    <section id="timeline-section" className="py-12 bg-slate-50 border-y border-slate-200">
+    <section id="timeline-section" className="py-12 bg-[#F8F3E8] border-y border-[#EFE8DA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E2ECE5] border border-[#1F5A45]/20 text-[#1F5A45] text-xs font-bold mb-3">
             <Calendar className="w-3.5 h-3.5" />
             11+ Master Calendar & Deadlines
           </div>
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-[#1F5A45] tracking-tight sm:text-4xl font-serif">
             When Does It All Happen? Critical Key Dates
           </h2>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-2 text-sm text-slate-700">
             Missing grammar school registration is the #1 mistake parents make. Follow this step-by-step timeline through Year 5 and Year 6.
           </p>
 
           {/* View Toggle Bar */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <div className="inline-flex p-1 rounded-xl bg-slate-200/80 border border-slate-300">
+            <div className="inline-flex p-1 rounded-xl bg-[#EFE8DA] border border-[#C7BAA7]/40">
               <button
                 onClick={() => setViewMode('calendar')}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   viewMode === 'calendar'
-                    ? 'bg-white text-indigo-700 shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#1F5A45] text-white shadow-xs'
+                    : 'text-slate-700 hover:text-[#1F5A45]'
                 }`}
               >
                 <Calendar className="w-3.5 h-3.5" />
@@ -50,8 +50,8 @@ export default function TimelineSection() {
                 onClick={() => setViewMode('cards')}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   viewMode === 'cards'
-                    ? 'bg-white text-indigo-700 shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#1F5A45] text-white shadow-xs'
+                    : 'text-slate-700 hover:text-[#1F5A45]'
                 }`}
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
@@ -66,10 +66,10 @@ export default function TimelineSection() {
                   <button
                     key={s}
                     onClick={() => setActiveSeason(s)}
-                    className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
+                    className={`px-2.5 py-1 rounded-lg font-bold transition-colors ${
                       activeSeason === s
-                        ? 'bg-indigo-600 text-white'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                        ? 'bg-[#E9774F] text-white'
+                        : 'bg-white text-slate-700 border border-[#EFE8DA] hover:bg-[#E2ECE5]'
                     }`}
                   >
                     {s}

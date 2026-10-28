@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import VisitorCounter from './VisitorCounter';
 import { 
   HelpCircle, 
@@ -45,22 +44,22 @@ interface NavbarProps {
 
 export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <header className="sticky top-0 z-50 bg-[#F8F3E8]/95 backdrop-blur-md border-b border-[#E3D8C6] shadow-2xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Brand Logo */}
+        <div className="flex items-center justify-between h-18">
+          {/* Brand Logo with Forest Green & Warm Serif Typography */}
           <button 
             onClick={() => onSelectTab('what-is-11plus')} 
-            className="flex items-center gap-2.5 text-left focus:outline-none"
+            className="flex items-center gap-3 text-left focus:outline-none group"
           >
-            <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-blue-500 text-white font-bold text-lg shadow-sm">
+            <span className="flex items-center justify-center w-11 h-11 rounded-2xl bg-[#1F5A45] text-white font-serif font-bold text-xl shadow-sm group-hover:bg-[#164233] transition-colors">
               11+
             </span>
             <div>
-              <span className="text-xl font-bold tracking-tight text-slate-900 block leading-none">
+              <span className="text-xl font-serif font-bold tracking-tight text-[#1F5A45] block leading-none">
                 11+ Compass
               </span>
-              <span className="text-xs text-slate-500 font-medium">UK Grammar School Guide for Parents</span>
+              <span className="text-xs text-[#5C6E67] font-medium font-sans">A Calm UK Grammar Guide for Parents</span>
             </div>
           </button>
 
@@ -75,11 +74,11 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
                   onClick={() => onSelectTab(tab.id)}
                   className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all ${
                     isActive
-                      ? 'bg-indigo-600 text-white shadow-sm font-bold'
-                      : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-100'
+                      ? 'bg-[#1F5A45] text-white shadow-xs font-bold'
+                      : 'text-[#3E4E47] hover:text-[#1F5A45] hover:bg-[#E2ECE5]/70'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-400'}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#F3DD87]' : 'text-[#6C7E77]'}`} />
                   <span>{tab.label}</span>
                 </button>
               );
@@ -93,7 +92,7 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
         </div>
 
         {/* Mobile Scrolling Horizontal Tab Strip */}
-        <div className="flex lg:hidden overflow-x-auto py-2.5 gap-1.5 border-t border-slate-100 no-scrollbar">
+        <div className="flex lg:hidden overflow-x-auto py-2.5 gap-1.5 border-t border-[#E3D8C6] no-scrollbar">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -103,8 +102,8 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
                 onClick={() => onSelectTab(tab.id)}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap transition-all font-semibold ${
                   isActive
-                    ? 'bg-indigo-600 text-white shadow-sm'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    ? 'bg-[#1F5A45] text-white shadow-xs'
+                    : 'bg-[#EFE8DA] text-[#3E4E47] hover:bg-[#E2ECE5]'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
