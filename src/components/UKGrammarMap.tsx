@@ -78,14 +78,28 @@ export const REGION_CLUSTERS: RegionCluster[] = [
   {
     id: 'bucks',
     name: 'Buckinghamshire County',
-    lat: 51.6900,
-    lng: -0.6800,
-    zoom: 10,
-    schoolCount: 7,
-    boroughs: 'Amersham, Beaconsfield, High Wycombe, Aylesbury, Marlow',
-    description: 'A fully selective grammar county with 13 grammar schools. Uses the GL Secondary Transfer Test (STTS) with a 121 pass mark.',
-    keySchools: ["Dr Challoner's Grammar School", "Dr Challoner's High School", "Beaconsfield High School", "Royal Grammar School (RGS High Wycombe)", "Aylesbury Grammar School (AGS)", "Aylesbury High School (AHS)", "Sir William Borlase's Grammar School"],
-    avgHousePrice: '£420,000 - £720,000'
+    lat: 51.7600,
+    lng: -0.7600,
+    zoom: 9,
+    schoolCount: 13,
+    boroughs: 'Buckingham, Amersham, Beaconsfield, High Wycombe, Aylesbury, Marlow, Burnham, Chesham',
+    description: 'A fully selective grammar county with all 13 grammar schools. Uses the GL Secondary Transfer Test (STTS) with a 121 pass mark.',
+    keySchools: [
+      "The Royal Latin School",
+      "Dr Challoner's Grammar School",
+      "Dr Challoner's High School",
+      "Beaconsfield High School",
+      "Royal Grammar School (RGS High Wycombe)",
+      "Aylesbury Grammar School (AGS)",
+      "Aylesbury High School (AHS)",
+      "Sir William Borlase's Grammar School",
+      "Burnham Grammar School",
+      "Chesham Grammar School",
+      "John Hampden Grammar School (JHGS)",
+      "Sir Henry Floyd Grammar School",
+      "Wycombe High School"
+    ],
+    avgHousePrice: '£365,000 - £720,000'
   },
   {
     id: 'essex',
