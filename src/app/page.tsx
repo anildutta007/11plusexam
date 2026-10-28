@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Navbar, { TabId, TABS } from '@/components/Navbar';
 import WhatIs11PlusSection from '@/components/WhatIs11PlusSection';
 import UKGrammarMap from '@/components/UKGrammarMap';
@@ -9,73 +10,118 @@ import PreparationMasterySection from '@/components/PreparationMasterySection';
 import SchoolsTable from '@/components/SchoolsTable';
 import TimelineSection from '@/components/TimelineSection';
 import SamplePapersSection from '@/components/SamplePapersSection';
-import { Sparkles, MapPin, Compass, BookOpen, CheckCircle } from 'lucide-react';
+import { Compass, Search } from 'lucide-react';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>('what-is-11plus');
+  const [heroPostcode, setHeroPostcode] = useState('');
+
+  const handleHeroSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    setActiveTab('postcode-finder');
+  };
 
   return (
     <div className="min-h-screen bg-[#F8F3E8] text-[#1F2D28] flex flex-col font-sans selection:bg-[#F3DD87] selection:text-[#1F5A45]">
       {/* Top Navbar with Tab Controller */}
       <Navbar activeTab={activeTab} onSelectTab={setActiveTab} />
 
-      {/* Hero Section styled with Forest Green, Butter Yellow badges, and Coral CTAs */}
-      <section className="relative overflow-hidden bg-[#1F5A45] text-white py-14 sm:py-20 border-b-4 border-[#F3DD87]">
-        {/* Subtle warm ambient accents */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E9774F]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F3DD87]/10 rounded-full blur-2xl pointer-events-none" />
+      {/* Replaced Warm Editorial Hero Section with compact font sizing */}
+      <section className="relative bg-[#F8F3E8] text-[#1F2D28] pt-6 sm:pt-10 pb-8 sm:pb-12 border-b border-[#EFE8DA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7">
+              {/* Butter Yellow Tag */}
+              <div className="inline-block px-3 py-1 rounded-full bg-[#F3DD87] text-[#1F5A45] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
+                For parents of Year 3–5 children
+              </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Butter Yellow Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3DD87] text-[#1F5A45] text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-xs">
-            <Sparkles className="w-4 h-4 text-[#E9774F]" />
-            <span>The Calm 2026/2027 UK Grammar School Companion</span>
+              {/* Compact Heading in Fraunces serif */}
+              <h1 className="text-2xl sm:text-4xl lg:text-[40px] font-serif font-extrabold text-[#1F5A45] leading-[1.18] tracking-tight">
+                The 11+ doesn’t have to feel overwhelming.
+              </h1>
+
+              {/* Subheading */}
+              <p className="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl">
+                Find grammar schools near you, know exactly what to do and when, and help your child prepare — calmly.
+              </p>
+
+              {/* Postcode Search Box */}
+              <form onSubmit={handleHeroSearch} className="mt-5 max-w-md">
+                <div className="relative flex items-center bg-white rounded-full p-1.5 border border-[#DDD0BC] shadow-xs focus-within:ring-2 focus-within:ring-[#1F5A45] focus-within:border-transparent transition-all">
+                  <input
+                    type="text"
+                    value={heroPostcode}
+                    onChange={(e) => setHeroPostcode(e.target.value)}
+                    placeholder="Enter postcode (e.g. CM1 2JG)..."
+                    className="w-full pl-4 pr-2 py-2 text-xs sm:text-sm font-medium text-slate-900 placeholder-slate-400 bg-transparent focus:outline-none uppercase"
+                  />
+                  <button
+                    type="submit"
+                    className="shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1F5A45] hover:bg-[#164233] text-white text-xs sm:text-sm font-bold transition-colors shadow-2xs flex items-center gap-1.5"
+                  >
+                    <span>Find schools</span>
+                  </button>
+                </div>
+              </form>
+
+              {/* Trust Subtext */}
+              <p className="mt-3 text-[11px] sm:text-xs text-slate-600 flex items-center gap-2">
+                <span>Free</span>
+                <span className="text-slate-400">&bull;</span>
+                <span>No sign-up</span>
+                <span className="text-slate-400">&bull;</span>
+                <span className="font-semibold text-slate-800">163 grammar schools covered</span>
+              </p>
+            </div>
+
+            {/* Right Illustration Column */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-2xl overflow-hidden shadow-md border-4 border-white bg-white">
+                <Image
+                  src="/images/hero-illustration.png"
+                  alt="Mother and son walking together towards a traditional grammar school in autumn"
+                  width={420}
+                  height={320}
+                  priority
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight max-w-4xl mx-auto leading-tight text-[#F8F3E8]">
-            Clear Guidance for <span className="text-[#F3DD87] underline decoration-[#E9774F] decoration-wavy decoration-2">Worried UK Parents</span> Navigating the 11-Plus
-          </h1>
-
-          <p className="mt-5 text-base sm:text-lg text-[#E2ECE5] max-w-2xl mx-auto leading-relaxed font-sans">
-            A warm, paper-friendly space covering postcode catchment radii, cut-off admission scores, school housing benchmarks, and balanced preparation roadmaps.
-          </p>
-
-          {/* Action Buttons: Coral for "Start here" / "Check Postcode", and Pale Sage outline */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 text-xs sm:text-sm font-bold font-sans">
-            <button
-              onClick={() => setActiveTab('postcode-finder')}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#E9774F] hover:bg-[#D7653D] text-white shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 tracking-wide"
-            >
-              <MapPin className="w-4 h-4 text-[#F3DD87]" />
-              Start Here: Postcode & Catchment
-            </button>
-
-            <button
-              onClick={() => setActiveTab('how-to-prepare')}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#E2ECE5] hover:bg-white text-[#1F5A45] font-bold shadow-xs transition-all"
-            >
-              <BookOpen className="w-4 h-4 text-[#1F5A45]" />
-              How to Prepare Guide
-            </button>
-          </div>
-
-          {/* Facts Band with Soft Beige & Forest Green trust points */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto pt-8 border-t border-white/20 text-left">
-            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
-              <span className="block text-2xl font-serif font-bold text-[#F3DD87]">163</span>
-              <span className="text-xs text-[#E2ECE5]">UK Grammar Schools</span>
+      {/* Facts Banner in Forest Green */}
+      <section className="bg-[#1F5A45] text-white py-5 sm:py-6 border-b border-[#164233]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-white/15">
+            <div className="pt-2 md:pt-0">
+              <span className="block text-2xl sm:text-3xl font-serif font-bold text-[#F8F3E8]">
+                &pound;0
+              </span>
+              <span className="mt-1 block text-xs sm:text-[13px] text-[#E2ECE5]">
+                Tuition fees &mdash; grammar schools are state-funded
+              </span>
             </div>
-            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
-              <span className="block text-2xl font-serif font-bold text-[#F8F3E8]">100% Free</span>
-              <span className="text-xs text-[#E2ECE5]">State Tuition Funding</span>
+
+            <div className="pt-4 md:pt-0">
+              <span className="block text-2xl sm:text-3xl font-serif font-bold text-[#F8F3E8]">
+                Sept, Year 6
+              </span>
+              <span className="mt-1 block text-xs sm:text-[13px] text-[#E2ECE5]">
+                When your child sits the test
+              </span>
             </div>
-            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
-              <span className="block text-2xl font-serif font-bold text-[#E9774F]">121+ / Rank</span>
-              <span className="text-xs text-[#E2ECE5]">Historical Admission Scores</span>
-            </div>
-            <div className="p-3.5 bg-[#164233]/70 rounded-2xl border border-white/10 backdrop-blur-xs">
-              <span className="block text-2xl font-serif font-bold text-[#F3DD87]">10 Regions</span>
-              <span className="text-xs text-[#E2ECE5]">National Selective Enclaves</span>
+
+            <div className="pt-4 md:pt-0">
+              <span className="block text-2xl sm:text-3xl font-serif font-bold text-[#F8F3E8]">
+                May, Year 5
+              </span>
+              <span className="mt-1 block text-xs sm:text-[13px] text-[#E2ECE5]">
+                When most registrations close
+              </span>
             </div>
           </div>
         </div>
