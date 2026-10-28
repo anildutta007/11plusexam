@@ -2067,7 +2067,7 @@ export const SAMPLE_PAPERS: SamplePaperResource[] = [
     subject: 'Mathematics',
     difficulty: 'Standard',
     description: 'Official GL Assessment free familiarisation booklet & answer sheet covering fractions, arithmetic, word problems, algebra, and geometry.',
-    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-familiarisation-materials',
+    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-materials',
     source: 'GL Assessment Official Portal'
   },
   {
@@ -2076,7 +2076,7 @@ export const SAMPLE_PAPERS: SamplePaperResource[] = [
     subject: 'Verbal Reasoning',
     difficulty: 'Standard',
     description: 'Official GL Assessment 50-minute VR practice booklet: word analogies, code breaking, letter patterns, antonym/synonym pairs.',
-    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-familiarisation-materials',
+    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-materials',
     source: 'GL Assessment Official Portal'
   },
   {
@@ -2085,7 +2085,7 @@ export const SAMPLE_PAPERS: SamplePaperResource[] = [
     subject: 'Non-Verbal Reasoning',
     difficulty: 'Standard',
     description: 'Official GL Assessment familiarisation paper: 3D cube rotations, net folding, matrix completion, and pattern sequences.',
-    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-familiarisation-materials',
+    downloadUrl: 'https://11plus.gl-assessment.co.uk/pages/free-materials',
     source: 'GL Assessment Official Portal'
   },
   {
