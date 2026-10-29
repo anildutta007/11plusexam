@@ -7,9 +7,9 @@ export default function VisitorCounter() {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
 
   useEffect(() => {
-    const BASE_VISITOR_COUNT = 14280;
-    const STORAGE_KEY = 'eleven_plus_compass_visits_total';
-    const SESSION_KEY = 'eleven_plus_compass_session_counted';
+    const BASE_VISITOR_COUNT = 1;
+    const STORAGE_KEY = 'eleven_plus_compass_visits_total_v2';
+    const SESSION_KEY = 'eleven_plus_compass_session_counted_v2';
 
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
@@ -21,14 +21,18 @@ export default function VisitorCounter() {
 
       const sessionCounted = sessionStorage.getItem(SESSION_KEY);
       if (!sessionCounted) {
-        count += 1;
+        if (!stored) {
+          count = BASE_VISITOR_COUNT;
+        } else {
+          count += 1;
+        }
         localStorage.setItem(STORAGE_KEY, count.toString());
         sessionStorage.setItem(SESSION_KEY, 'true');
       }
 
       setVisitorCount(count);
     } catch {
-      setVisitorCount(BASE_VISITOR_COUNT + 1);
+      setVisitorCount(BASE_VISITOR_COUNT);
     }
   }, []);
 
